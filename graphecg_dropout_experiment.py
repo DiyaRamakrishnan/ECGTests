@@ -1,18 +1,9 @@
 """
-Does training GraphECG with random lead dropout help it handle missing leads
-at test time? PTB-XL, 3 classes (NORM / IMI / ASMI).
+PTB-XL, 3 classes (NORM / IMI / ASMI).
 
 Trains a baseline (always 12 leads) and a dropout version (sometimes 6-12 leads),
 then tests both with 12/9/6 leads two ways: subgraph (leads removed from the graph)
 and zerofill (leads set to 0, graph stays full size).
-
-Run:
-  python graphecg_dropout_experiment.py train --mode baseline --seed 42
-  python graphecg_dropout_experiment.py train --mode dropout --seed 42
-  python graphecg_dropout_experiment.py eval --ckpt_mode baseline --method subgraph --out_dir $SAVE_LOCATION/lead_corruption_results
-  (run eval for each baseline/dropout x subgraph/zerofill combo)
-
-Needs DATASET_LOCATION (PTB-XL folder) and SAVE_LOCATION (output folder).
 """
 import os
 import ast
