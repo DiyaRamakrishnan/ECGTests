@@ -1,12 +1,6 @@
 """
 Compares 5 ECG models (conv_rgnn, st_rege, ribeiro, graphecg, xgnn4mi) on PTB-XL
 6-class multi-label (NORM / STTC / CD / HYP / ASMI / IMI).
-
-Run:
-  python ptbxl_6class_benchmark.py train --model conv_rgnn --seed 42 --epochs 50
-  python ptbxl_6class_benchmark.py aggregate --results_dir $SAVE_LOCATION/new_graph_models_6class
-
-Needs DATASET_LOCATION (PTB-XL folder) and SAVE_LOCATION (output folder).
 """
 import os
 import ast
