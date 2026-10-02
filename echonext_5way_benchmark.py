@@ -1,14 +1,5 @@
 """
-Compares 5 models (conv_rgnn, st_rege, ribeiro, graphecg, xgnn4mi) on EchoNext:
-12-lead ECG + 7 clinical features in, structural heart disease yes/no out.
-Only GraphECG uses the clinical features.
-
-Run:
-  python echonext_5way_benchmark.py extract   (downloads a random subset from PhysioNet)
-  python echonext_5way_benchmark.py train --model conv_rgnn --seed 42 --epochs 150
-  python echonext_5way_benchmark.py aggregate --results_dir $SAVE_LOCATION/echonext_5way
-
-Needs SAVE_LOCATION (output folder). Change DATA_DIR below to your own folder.
+Compares 5 models (conv_rgnn, st_rege, ribeiro, graphecg, xgnn4mi) on EchoNext
 """
 import os
 import io
