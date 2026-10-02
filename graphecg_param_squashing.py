@@ -1,17 +1,6 @@
 """
 Shrinks GraphECG to Conv-RGNN's exact size (60,550 params) to see if GraphECG
 wins on PTB-XL 6-class because of its architecture or just because it's ~20x bigger.
-
-Result: the squashed GraphECG (60,543 params) ties Conv-RGNN, so most of the
-full model's advantage comes from having more parameters.
-
-Run:
-  python graphecg_param_squashing.py search --target_total 60550
-  python graphecg_param_squashing.py breakdown
-  python graphecg_param_squashing.py train --model graphecg_squashed_v2 --seed 42 --epochs 50
-  python graphecg_param_squashing.py aggregate --results_dir $SAVE_LOCATION/graphecg_squash_ptbxl6class
-
-Needs DATASET_LOCATION (PTB-XL folder) and SAVE_LOCATION (output folder).
 """
 import os
 import ast
